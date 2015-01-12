@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.shephertz.sample"
+      android:versionCode="1"
+      android:versionName="1.0"
+      android:installLocation="auto">
+
+    <uses-sdk android:minSdkVersion="9"/>
+    <uses-feature android:glEsVersion="0x00020000" />
+
+    <application android:label="@string/app_name"
+                 android:icon="@drawable/icon">
+					 
+        <!-- Tell Cocos2dxActivity the name of our .so -->
+        <meta-data android:name="android.app.lib_name"
+	              android:value="cocos2dcpp" />
+
+        <activity android:name="org.cocos2dx.cpp.AppActivity"
+                  android:label="@string/app_name"
+                  android:screenOrientation="landscape"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+                  android:configChanges="orientation">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+     
+        <meta-data android:name="onMessageOpen" android:value="org.cocos2dx.cpp.AppActivity"/>
+        <receiver
+            android:name="app42.push.coco.App42GCMReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                
+                <!-- Receives the actual messages. -->
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <!-- Receives the registration id. -->
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <!-- Your package name here -->
+                <category android:name="com.shephertz.sample" />
+            </intent-filter>
+        </receiver>
+        
+        <!--
+         Application-specific subclass of GCMBaseIntentService that will
+         handle received messages.
+         By default, it must be named .GCMIntentService, unless the
+         application uses a custom BroadcastReceiver that redefines its name.
+         -->
+        <service android:name="app42.push.coco.App42GCMService" />
+      
+    </application>
+
+    <supports-screens android:anyDensity="true"
+                      android:smallScreens="true"
+                      android:normalScreens="true"
+                      android:largeScreens="true"
+                      android:xlargeScreens="true"/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    
+    
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    
+    <!-- GCM requires a Google account. -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    
+    <!-- Keeps the processor from sleeping when a message is received. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    
+    <!--
+     Creates a custom permission so only this app can receive its messages.
+     NOTE: the permission *must* be called PACKAGE.permission.C2D_MESSAGE,
+     where PACKAGE is the application's package name.
+     -->
+    <permission
+    android:name="com.shephertz.sample.permission.C2D_MESSAGE"
+    android:protectionLevel="signature" />
+    
+    <uses-permission android:name="com.shephertz.sample.permission.C2D_MESSAGE" />
+    
+    <!-- This app has permission to register and receive data message. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+  
+    
+</manifest> 
