@@ -371,13 +371,13 @@
 		080E96DDFE201D6D7F000001 /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				5087E77117EB970100C73F5D /* Icons */,
-				503AE0FA17EB989F00D1A890 /* AppController.h */,
-				503AE0FB17EB989F00D1A890 /* AppController.mm */,
 				5DCDBA2B1A529C2B00F8339D /* App42Bridge.h */,
 				5DCDBA2C1A529C2B00F8339D /* App42Bridge.mm */,
 				5DCDBA2D1A529C2B00F8339D /* AppController+App42PushExt.h */,
 				5DCDBA2E1A529C2B00F8339D /* AppController+App42PushExt.mm */,
+				5087E77117EB970100C73F5D /* Icons */,
+				503AE0FA17EB989F00D1A890 /* AppController.h */,
+				503AE0FB17EB989F00D1A890 /* AppController.mm */,
 				503AE0FC17EB989F00D1A890 /* main.m */,
 				503AE0FD17EB989F00D1A890 /* Prefix.pch */,
 				503AE0FE17EB989F00D1A890 /* RootViewController.h */,
