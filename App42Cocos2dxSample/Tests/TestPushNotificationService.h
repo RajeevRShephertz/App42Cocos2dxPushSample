@@ -58,7 +58,7 @@ public:
     void loadResponseScene();
     void didReceivePushNotification(const char* pushMsg);
     
-    void deviceDidRegisteredToAPNSWithDeviceToken(const char* deviceToken);
+    void deviceDidRegisteredWithDeviceToken(const char* deviceToken);
     
 private:
     std::string apiKey;

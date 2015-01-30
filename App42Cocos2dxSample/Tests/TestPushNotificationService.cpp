@@ -306,7 +306,7 @@ bool TestPushNotificationService::init()
 
 void TestPushNotificationService::getDeviceToken(Ref *sender)
 {
-    App42PushHelper::registerForPush(CC_CALLBACK_1(TestPushNotificationService::deviceDidRegisteredToAPNSWithDeviceToken, this));
+    App42PushHelper::registerForPush(CC_CALLBACK_1(TestPushNotificationService::deviceDidRegisteredWithDeviceToken, this));
 }
 
 void TestPushNotificationService::getLastMessage(Ref *sender)
@@ -533,13 +533,13 @@ void TestPushNotificationService::menuCloseCallback(Ref* pSender)
 }
 
 
-void TestPushNotificationService::deviceDidRegisteredToAPNSWithDeviceToken(const char* l_deviceToken)
+void TestPushNotificationService::deviceDidRegisteredWithDeviceToken(const char* l_deviceToken)
 {
     
     deviceToken = l_deviceToken;
     deviceTokenString = l_deviceToken;
     log("deviceToken = %s",deviceToken);
-    log("\n\nTestPushNotificationService::deviceDidRegisteredToAPNSWithDeviceToken = %s\n\n",l_deviceToken);
+    log("\n\nTestPushNotificationService::deviceDidRegisteredWithDeviceToken = %s\n\n",l_deviceToken);
 }
 
 void TestPushNotificationService::didReceivePushNotification(const char* pushMsg)
