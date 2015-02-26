@@ -11,17 +11,7 @@ public class PushHelper {
 	
 	private static final String LastMessage="lastMessage";
 	private static final String AppName="cocoApp42Push";
-	static {
-    //    try {
-        
-    //        Log.i("App42Push", "Trying to load cpp_empty_test.so");
-    //        System.loadLibrary("cpp_empty_test");
-    //    }
-    //    catch (UnsatisfiedLinkError ule) {
-    //        Log.e("App42Push", "WARNING: Could not load cpp_empty_test.so");
-    //    }
-    
-    //}
+	
 	/*
 	 * This function allows to register device for PushNotification service
 	 */
